@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("Authors");
-})
-router.get("/:authorId", (req, res) => {
-    const { bookId } = req.params;
-    res.send(`Author with id ${bookId}`);
-})
+const { getAuthors } = require('../controllers/authorsController');
+router.get("/", getAuthors)
+
+const { getAuthorId } = require("../controllers/authorIdController");
+router.get("/:authorId", getAuthorId)
 
 module.exports = router;

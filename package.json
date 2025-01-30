@@ -2,7 +2,8 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0"
   },
   "name": "nodejstest",
   "version": "1.0.0",
