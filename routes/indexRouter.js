@@ -1,18 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('index');
-})
-router.get('/about', (req, res) => {
-    res.render('about');
-})
+const {getIndex, getAbout, getContact} = require('../controllers/indexController')
+
+router.get('/', getIndex);
+router.get('/about', getAbout)
 router.route('/contact')
-    .get((req, res) => {
-       res.render('Contact');
-    })
+    .get(getContact)
     .post((req, res) => {
-        res.send("Create contact")
+        res.send("Create contact");
     })
 
 module.exports = router;

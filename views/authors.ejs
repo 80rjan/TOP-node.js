@@ -8,7 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('navbar', {links: links}) %>
-    <h1>Hello</h1>
+    <%- include('navbar', {links: links})%>
+    <% for (var i = 0; i < authors.length; i++) { %>
+        <a href="authors/<%= authors[i].id%>" style="margin-right: 20px">
+            <%= authors[i].name %>
+        </a>
+    <% }%>
 </body>
 </html>

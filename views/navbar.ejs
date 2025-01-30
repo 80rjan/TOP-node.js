@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<body>
+<nav>
+    <% for (var i = 0; i < links.length; i++) { %>
+        <a href="<%= links[i].href%>" style="margin-right: 20px">
+            <%= links[i].name %>
+        </a>
+    <% }%>
+</nav>
+</body>
+</html>

@@ -3,8 +3,8 @@ const asyncHandler = require("express-async-handler");
 
 const getAuthors = asyncHandler(async (req, res) => {
     let authors = await db.getAllAuthors();
-    let string = "Authors: " + authors.map(author => author.name).join(", ");
-    res.send(string);
+    let links = await db.getLinks();
+    res.render("authors", {authors: authors, links: links});
 })
 
 module.exports = { getAuthors }
